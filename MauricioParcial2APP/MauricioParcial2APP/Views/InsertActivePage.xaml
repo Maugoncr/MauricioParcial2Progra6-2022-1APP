@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauricioParcial2APP.Views.InsertActivePage"
+              BackgroundImageSource="registrobg.jpg"
+             >
+    
+    
+    <ContentPage.Content>
+
+
+        <StackLayout Padding="10,0,10,0" VerticalOptions="Center">
+
+            <FlexLayout Padding="95,0,0,0">
+
+                <Image Source="icon2.png" VerticalOptions="Center" IsVisible="true" HeightRequest="170" WidthRequest="170"/>
+
+            </FlexLayout>
+            <Entry x:Name="TxtName" HorizontalTextAlignment="Start" Placeholder="Name" PlaceholderColor="White" FontSize="Large" TextColor="White"/>
+            <Entry x:Name="TxtArea" HorizontalTextAlignment="Start" Placeholder="Area"  FontSize="Large" PlaceholderColor="White" TextColor="White"/>
+            <Entry x:Name="TxtCost" HorizontalTextAlignment="Start" Placeholder="Cost" PlaceholderColor="White" FontSize="Large" TextColor="White" Keyboard="Numeric"/>
+            
+
+            <FlexLayout>
+
+                <StackLayout Orientation="Horizontal" Padding="0,10,0,0" Spacing="20" HorizontalOptions="End">
+
+                    <Button x:Name="BtnAdd" Text="Add" BackgroundColor="#16F516" 
+                    WidthRequest="175" Padding="10,0,10,0" FontAttributes="Bold" FontSize="Medium" Clicked="BtnAdd_Clicked"/>
+                 
+                    
+
+                    <Button x:Name="btnCancel" Text="Cancel" BackgroundColor="#EB1F62" 
+                    WidthRequest="175" Padding="10,0,10,0"
+                        Clicked="CmdVolver" FontAttributes="Bold" FontSize="Medium"/>
+
+                </StackLayout>
+
+            </FlexLayout>
+
+
+
+        </StackLayout>
+
+
+
+
+
+
+
+    </ContentPage.Content>
+</ContentPage>
