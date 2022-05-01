@@ -2,6 +2,7 @@
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
@@ -80,6 +81,63 @@ namespace MauricioParcial2APP.Models
             }
 
             return R;
+        }
+
+
+
+
+        public async Task<ObservableCollection<Active>> GetActives()
+        {
+
+            try
+            {
+
+                string routeSufix = string.Format("Actives");
+
+                string FinalApiRoute = CnnToAPI.ProductiorRoute + routeSufix;
+
+
+                RestClient client = new RestClient(FinalApiRoute);
+
+                request = new RestRequest(FinalApiRoute, Method.Get);
+
+
+                //agregar la info de seguridad, en este caso api key
+
+                request.AddHeader(CnnToAPI.ApiKeyName, CnnToAPI.ApiKeyValue);
+
+                request.AddHeader(contentType, mimetype);
+
+                RestResponse response = await client.ExecuteAsync(request);
+
+                HttpStatusCode statusCode = response.StatusCode;
+
+                var QList = JsonConvert.DeserializeObject<ObservableCollection<Active>>(response.Content);
+
+
+
+                if (statusCode == HttpStatusCode.OK)
+                {
+                    return QList;
+                }
+                else
+                {
+                    return null;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                string msg = ex.Message;
+
+                throw;
+            }
+
+
+
+
+
         }
 
 

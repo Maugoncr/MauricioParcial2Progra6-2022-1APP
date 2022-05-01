@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading.Tasks;
 using MauricioParcial2APP.Models;
@@ -56,6 +57,55 @@ namespace MauricioParcial2APP.ViewModels
 
 
         }
+
+
+        public async Task<ObservableCollection<Active>> GetQList()
+        {
+
+
+            if (IsBusy)
+            {
+                return null;
+            }
+            else
+            {
+                IsBusy = true;
+
+                try
+                {
+                    ObservableCollection<Active> list = new ObservableCollection<Active>();
+
+                    list = await MyActive.GetActives();
+
+                    if (list == null)
+                    {
+                        return null;
+                    }
+                    else
+                    {
+                        return list;
+                    }
+
+
+                }
+                catch (Exception)
+                {
+                    return null;
+
+                }
+                finally
+                {
+                    IsBusy = false;
+
+
+
+                }
+            }
+
+
+
+        }
+
 
 
     }

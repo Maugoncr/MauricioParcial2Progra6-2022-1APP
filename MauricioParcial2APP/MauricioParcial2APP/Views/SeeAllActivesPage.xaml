@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauricioParcial2APP.Views.SeeAllActivesPage"
+             BackgroundColor="#A8FAF8"
+             >
+    
+    
+    <ContentPage.Content>
+
+        <ScrollView>
+            <StackLayout>
+                <Label
+                    Text="My Actives"
+                    VerticalOptions="CenterAndExpand"
+                    HorizontalOptions="CenterAndExpand"
+                   TextColor="Black"
+                    FontSize="18"
+                    />
+
+                <ListView x:Name="LstMyActives" RowHeight="150" BackgroundColor="#A8FAF8" SeparatorColor="#13C2F2" >
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+
+                            <ImageCell Text="{Binding Name}"
+                                       Detail="{Binding Area}"
+                                       ImageSource="icon2.png"
+                                       
+                                       DetailColor="Black" TextColor="Black"
+                                       />
+
+
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+
+            </StackLayout>
+
+        </ScrollView>
+
+
+
+
+    </ContentPage.Content>
+</ContentPage>

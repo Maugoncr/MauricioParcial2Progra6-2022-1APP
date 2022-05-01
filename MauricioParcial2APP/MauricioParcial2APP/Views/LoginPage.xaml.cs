@@ -37,5 +37,10 @@ namespace MauricioParcial2APP.Views
         {
             await Navigation.PushAsync(new InsertActivePage());
         }
+
+        private async void CmdSeeActives(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new SeeAllActivesPage());
+        }
     }
 }

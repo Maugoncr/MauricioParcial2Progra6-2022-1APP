@@ -39,8 +39,8 @@
             <!--Clicked="BtnLogin_Clicked"-->
 
 
-            <!--<Button x:Name="BtnRegister" VerticalOptions="Center" Text="Register" FontSize="Medium" CornerRadius="30" BackgroundColor="LightPink" 
-                    BorderColor="White" BorderWidth="0.8" Clicked="CmdUserRegister"/>-->
+            <Button x:Name="BtnSeeActives" VerticalOptions="Center" Text="See Actives" FontSize="Medium" CornerRadius="30" BackgroundColor="LightPink" 
+                    BorderColor="White" BorderWidth="0.8" Clicked="CmdSeeActives"/>
 
 
 
